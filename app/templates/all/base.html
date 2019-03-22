@@ -1,28 +1,33 @@
 {% load bootstrap3 %}
-{% load static%}
+{% load static %}
 <html>
+
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   {% if title %}
   <title>NieghborHood - {{title}}</title>
   {% else %}
-    <title> NieghborHood</title>
+  <title> NieghborHood</title>
   {% endif %}
 
   {% block styles %}
-    {% bootstrap_css %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'base.css' %}">
   {% endblock %}
 
 </head>
+
 <body>
   {% include "navbar.html" %}
 
-    {% block content %} <h1 style = 'text-align:center;'>NeighborHood search</h1> {%endblock%}
-    {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     {% bootstrap_javascript %}
-    {% endblock %}
+  {% block content %} <h1 style='text-align:center;'>NeighborHood search</h1> {%endblock%}
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %}
+  {% endblock %}
 
 </body>
+
 </html>
