@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'neighborhood.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neighborhood'),
+        'NAME': 'neighborhood',
     }
 }
 
