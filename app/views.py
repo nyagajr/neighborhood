@@ -6,3 +6,7 @@ from django.http  import HttpResponse
 
 def welcome(request):
     return render(request, 'welcome.html')
+
+# def signup(request):
+#     return redirect('/accounts/login/')
+#     return render(request, 'registration_form.html')
