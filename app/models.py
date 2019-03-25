@@ -21,3 +21,11 @@ class Profile(models.Model):
         return self.profile_name
 
 
+class Business(models.Model):
+    b_name =  models.CharField(max_length =30)
+    b_email_address =  models.CharField(max_length =30)
+    user = models.ForeignKey(User)
+    neighborhood = models.ForeignKey(Hood)
+
+    def __str__(self):
+        return self.b_name
