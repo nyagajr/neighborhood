@@ -12,3 +12,12 @@ class Hood(models.Model):
     def __str__(self):
         return self.hood_name
 
+class Profile(models.Model):
+    profile_name = models.CharField(max_length = 30)
+    email_address = models.CharField(max_length = 30)
+    neighborhood_id = models.ForeignKey(Hood)
+
+    def __str__(self):
+        return self.profile_name
+
+
