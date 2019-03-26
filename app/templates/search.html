@@ -1,0 +1,31 @@
+{%extends 'all/base.html'%}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if searched_articles %}
+      <h2>Found {{ searched_articles|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2>{{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if searched_articles %}
+    {% for article in searched_articles %}
+      <div class="col-sm-6 col-md-3">
+        <div class="panel-heading">
+          {{article.hood_name}}
+        </div>
+        <div class="panel-body">
+          <img src="{{article.hood_photo.url}}" alt="image" width="300" height="300">
+          <a href="{{article.link_hood}}">{{article.link_hood}}</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
