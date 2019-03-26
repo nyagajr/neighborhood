@@ -1,0 +1,29 @@
+{%extends 'all/base.html'%}
+{{block.super}}
+{% block content %}
+
+
+{% for all in all_profile%}
+<div class="content-section">
+  <div class="media">
+
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
+      <img class="rounded-circle account-img" src="{{all.dpic.url}}" alt="" style='border-radius:50%; '>
+      <div class="media-body">
+        <h2 class="account-heading">{{all.profile_name}}</h2><br><br>
+        <p> <b>Contact:</b>{{all.email_address}}</p><br>
+        <p> <b>From:</b>{{all.neighborhood_id}}</p>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
