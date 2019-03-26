@@ -9,7 +9,8 @@ from .models import *
 # @login_required(login_url='/accounts/login/')
 
 def welcome(request):
-    return render(request, 'welcome.html')
+    new = Hood.objects.all()
+    return render(request, 'welcome.html',locals())
 
 def signup(request):
     return redirect('/accounts/login/')
