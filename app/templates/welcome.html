@@ -1,5 +1,28 @@
 {%extends 'all/base.html'%}
-
-{% block content %}
 {{block.super}}
+{% block content %}
+
+{% for new_item in new %}
+<div>
+
+  <div class='row'>
+    <div class='col-md-4'>
+    </div>
+    <div class='col-md-4'>
+      <div id='pan' class="panel panel-default">
+        <div class="panel-heading"><b>Hood Name:</b>{{new_item.hood_name}}</div>
+        <form class="" action="" method="post">
+          <div class="panel-body"><img src="{{new_item.hood_photo.url}}" alt="jpg" width="350" height="300" /></div>
+        </form>
+        <div class="panel-footer"><br><b>Hood Location</b>:{{new_item.location}}<b><br>Link:</b>{{new_item.link_hood}}</div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
