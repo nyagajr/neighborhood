@@ -15,6 +15,13 @@ class Hood(models.Model):
     def __str__(self):
         return self.hood_name
 
+
+    @classmethod
+    def search_by_hood_name(cls,search_term):
+        app = Hood.objects.filter(hood_name__icontains=search_term)
+        return app
+
+
 class Profile(models.Model):
     profile_name = models.CharField(max_length = 30)
     dpic = models.ImageField(upload_to = 'articles/')
